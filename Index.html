@@ -323,20 +323,28 @@ const ICC = {
   iccA: {id:'iccA',icon:'🟡',name:'ICC A (All Risks)',rate:.03, desc:'All Risks รวมถึงขโมย/ความชื้น/แมลง'},
 };
 const EVENTS = [
-  {type:'safe',         icon:'⚓', title:'ส่งถึงปลายทางปลอดภัย', desc:'เรือแล่นตามกำหนด ไม่มีเหตุการณ์ใด',              lossRate:0,   covers:[], w:8},
-  {type:'safe',         icon:'🌤️',title:'สภาพอากาศดีเยี่ยม',    desc:'ทะเลสงบ เรือถึงเร็วกว่ากำหนด',                  lossRate:0,   covers:[], w:7},
-  {type:'partial_minor',icon:'💧',title:'ความชื้นทำสินค้าเสียหาย',desc:'ความชื้นในตู้สูง สินค้าเสียหาย 20%',            lossRate:.20, covers:['iccA'], w:4},
-  {type:'partial_minor',icon:'🐛',title:'แมลงรบกวนสินค้า',       desc:'สินค้าเกษตรเสียหาย 15%',                         lossRate:.15, covers:['iccA'], w:3},
-  {type:'partial_major',icon:'🌊',title:'คลื่นพายุเข้าปะทะ',     desc:'น้ำทะเลเข้าระวาง สินค้าเสียหาย 35%',            lossRate:.35, covers:['iccB','iccA'], w:5},
-  {type:'partial_major',icon:'🏗️',title:'ตู้ตกระหว่างขนถ่าย',   desc:'เครนขัดข้อง สินค้าเสียหาย 30%',                 lossRate:.30, covers:['iccB','iccA'], w:5},
-  {type:'partial_major',icon:'🔥',title:'ไฟไหม้บางส่วน',          desc:'เพลิงไหม้ในระวาง สินค้าเสียหาย 50%',            lossRate:.50, covers:['iccB','iccA'], w:4},
-  {type:'partial_major',icon:'🥵',title:'ระบบทำความเย็นขัดข้อง', desc:'Refrigeration เสีย สินค้าเสียหาย 40%',           lossRate:.40, covers:['iccB','iccA'], w:3},
-  {type:'theft',        icon:'🥷',title:'สินค้าถูกขโมย',          desc:'สินค้าหายระหว่างขนถ่าย 40%',                     lossRate:.40, covers:['iccA'], w:3},
-  {type:'total',        icon:'🌀',title:'พายุไต้ฝุ่น!',            desc:'เรือล่มกลางทะเล สูญเสียทั้งหมด',                 lossRate:1,   covers:['iccC','iccB','iccA'], w:3},
-  {type:'total',        icon:'🏴‍☠️',title:'โจรสลัดโจมตี!',         desc:'เรือถูกยึด สูญเสียทั้งหมด',                      lossRate:1,   covers:['iccC','iccB','iccA'], w:2},
-  {type:'total',        icon:'💥',title:'ระเบิดในระวาง!',           desc:'เหตุไม่คาดฝัน สูญเสียทั้งหมด',                  lossRate:1,   covers:['iccC','iccB','iccA'], w:2},
-  {type:'bonus',        icon:'⭐',title:'สินค้าขาดตลาด!',          desc:'ราคาพุ่งสูง ได้กำไรพิเศษ +20%',                 lossRate:-.20,covers:[], w:2},
-  {type:'bonus',        icon:'🏆',title:'ลูกค้าสั่งซื้อเพิ่ม!',   desc:'ส่งเร็วกว่ากำหนด ได้ค่าตอบแทนพิเศษ +15%',       lossRate:-.15,covers:[], w:2},
+  // SAFE — ได้กำไรเต็มมูลค่าสินค้า
+  {type:'safe', icon:'⚓', title:'ส่งถึงปลายทางปลอดภัย',  desc:'เรือแล่นตามกำหนด ไม่มีเหตุการณ์ใด',       lossRate:0, covers:[], w:8},
+  {type:'safe', icon:'🌤️',title:'สภาพอากาศดีเยี่ยม',     desc:'ทะเลสงบ เรือถึงเร็วกว่ากำหนด',            lossRate:0, covers:[], w:7},
+  {type:'safe', icon:'📦',title:'สินค้าถึงครบถ้วน',       desc:'บรรจุภัณฑ์สมบูรณ์ ลูกค้าพอใจมาก',        lossRate:0, covers:[], w:6},
+  {type:'safe', icon:'🛳️',title:'เรือเดินทางราบรื่น',     desc:'ไม่มีความเสียหายใดๆ ระหว่างการขนส่ง',     lossRate:0, covers:[], w:5},
+  // PARTIAL MINOR — ICC A เท่านั้น
+  {type:'partial_minor',icon:'💧',title:'ความชื้นทำสินค้าเสียหาย',desc:'ความชื้นในตู้สูง สินค้าเสียหาย 20%',  lossRate:.20,covers:['iccA'], w:4},
+  {type:'partial_minor',icon:'🐛',title:'แมลงรบกวนสินค้า',       desc:'สินค้าเกษตรเสียหาย 15%',              lossRate:.15,covers:['iccA'], w:3},
+  // PARTIAL MAJOR — ICC B, A
+  {type:'partial_major',icon:'🌊',title:'คลื่นพายุเข้าปะทะ',     desc:'น้ำทะเลเข้าระวาง สินค้าเสียหาย 35%', lossRate:.35,covers:['iccB','iccA'], w:5},
+  {type:'partial_major',icon:'🏗️',title:'ตู้ตกระหว่างขนถ่าย',   desc:'เครนขัดข้อง สินค้าเสียหาย 30%',      lossRate:.30,covers:['iccB','iccA'], w:5},
+  {type:'partial_major',icon:'🔥',title:'ไฟไหม้บางส่วน',          desc:'เพลิงไหม้ในระวาง สินค้าเสียหาย 50%', lossRate:.50,covers:['iccB','iccA'], w:4},
+  {type:'partial_major',icon:'🥵',title:'ระบบทำความเย็นขัดข้อง', desc:'Refrigeration เสีย สินค้าเสียหาย 40%',lossRate:.40,covers:['iccB','iccA'], w:3},
+  // THEFT — ICC A เท่านั้น
+  {type:'theft', icon:'🥷',title:'สินค้าถูกขโมย',         desc:'สินค้าหายระหว่างขนถ่าย 40%',               lossRate:.40,covers:['iccA'], w:3},
+  // TOTAL LOSS — ICC C, B, A
+  {type:'total', icon:'🌀',title:'พายุไต้ฝุ่น!',           desc:'เรือล่มกลางทะเล สูญเสียทั้งหมด',           lossRate:1,  covers:['iccC','iccB','iccA'], w:3},
+  {type:'total', icon:'🏴‍☠️',title:'โจรสลัดโจมตี!',         desc:'เรือถูกยึด สูญเสียทั้งหมด',               lossRate:1,  covers:['iccC','iccB','iccA'], w:2},
+  {type:'total', icon:'💥',title:'ระเบิดในระวาง!',          desc:'เหตุไม่คาดฝัน สูญเสียทั้งหมด',            lossRate:1,  covers:['iccC','iccB','iccA'], w:2},
+  // BONUS
+  {type:'bonus', icon:'⭐',title:'สินค้าขาดตลาด!',         desc:'ราคาพุ่งสูง ได้โบนัสพิเศษ +20%',          lossRate:-.20,covers:[], w:2},
+  {type:'bonus', icon:'🏆',title:'ลูกค้าสั่งซื้อเพิ่ม!',   desc:'ส่งเร็วกว่ากำหนด โบนัสพิเศษ +15%',        lossRate:-.15,covers:[], w:2},
 ];
 
 // ══ HELPERS ══
@@ -458,11 +466,11 @@ function hostSpin(){
     const cv=a.cargo.value;
     const premium=Math.round(cv*icc.rate);
     const rawLoss=ev.lossRate>0?Math.round(cv*ev.lossRate):0;
-    const gain=ev.lossRate<0?Math.round(cv*Math.abs(ev.lossRate)):0;
+    const bonus=ev.lossRate<0?Math.round(cv*Math.abs(ev.lossRate)):0;
     const canClaim=ev.covers.includes(a.icc);
     const claimAmt=canClaim?rawLoss:0;
-    const netChange=gain-rawLoss+claimAmt-premium;
-    a.eventResult={ev,rawLoss,gain,premium,claimAmt,netChange,canClaim,cargoVal:cv};
+    const netChange=cv-rawLoss+claimAmt+bonus-premium;
+    a.eventResult={ev,rawLoss,bonus,premium,claimAmt,netChange,canClaim,cargoVal:cv};
     if(players[a.playerName]) players[a.playerName].profit=(players[a.playerName].profit||0)+netChange;
   });
   const assignsObj={};
@@ -658,7 +666,7 @@ function renderPlayerEvent(el,a,p){
     ${claimHtml}
     <div class="rp-breakdown">
       <div class="rb-row"><span class="rb-label">มูลค่าสินค้า</span><span class="rb-val gold-c">${fmt(r.cargoVal)}</span></div>
-      ${r.gain>0?`<div class="rb-row"><span class="rb-label">โบนัส</span><span class="rb-val pos">+${fmt(r.gain)}</span></div>`:''}
+      ${r.bonus>0?`<div class="rb-row"><span class="rb-label">โบนัส</span><span class="rb-val pos">+${fmt(r.bonus)}</span></div>`:''}
       ${r.rawLoss>0?`<div class="rb-row"><span class="rb-label">ความเสียหาย</span><span class="rb-val neg">-${fmt(r.rawLoss)}</span></div>`:''}
       ${r.claimAmt>0?`<div class="rb-row"><span class="rb-label">เคลมประกัน</span><span class="rb-val pos">+${fmt(r.claimAmt)}</span></div>`:''}
       ${r.premium>0?`<div class="rb-row"><span class="rb-label">เบี้ยประกัน (${(icc.rate*100).toFixed(0)}%)</span><span class="rb-val neg">-${fmt(r.premium)}</span></div>`:''}
