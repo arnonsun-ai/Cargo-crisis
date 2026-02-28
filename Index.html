@@ -18,14 +18,11 @@
 html,body{height:100%;overflow:hidden;}
 body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);}
 
-/* screens */
 .screen{display:none;position:fixed;inset:0;overflow-y:auto;}
 .screen.show{display:block;}
 #splash{display:none;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;
 background:radial-gradient(ellipse at 50% 40%,#0d2244,#050d1a 70%);}
 #splash.show{display:flex;}
-
-/* splash */
 .splash-ship{font-size:clamp(3rem,10vw,6rem);animation:float 3s ease-in-out infinite;}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 .splash-title{font-family:‘Chakra Petch’,sans-serif;font-size:clamp(2rem,8vw,4rem);
@@ -33,7 +30,6 @@ font-weight:800;color:var(–gold);letter-spacing:4px;text-align:center;margin:1
 .splash-sub{color:var(–muted);font-size:.95rem;text-align:center;margin-bottom:32px;}
 .mode-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 
-/* buttons */
 .btn{padding:14px 24px;border:none;border-radius:12px;font-family:‘Chakra Petch’,sans-serif;
 font-size:.95rem;font-weight:700;cursor:pointer;transition:all .15s;letter-spacing:1px;}
 .btn:active{transform:scale(.96);}
@@ -44,15 +40,14 @@ font-size:.95rem;font-weight:700;cursor:pointer;transition:all .15s;letter-spaci
 .btn-full{width:100%;display:block;margin-bottom:10px;}
 .btn:disabled{opacity:.4;cursor:not-allowed;}
 
-/* cards */
 .card{background:rgba(255,255,255,.05);border:1px solid var(–border);border-radius:14px;padding:16px;margin-bottom:14px;}
 .card-label{font-size:.68rem;letter-spacing:2.5px;color:var(–muted);text-transform:uppercase;margin-bottom:10px;}
 input[type=text],input[type=number]{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
 border-radius:10px;padding:12px 14px;color:var(–text);font-family:‘Sarabun’,sans-serif;font-size:1rem;outline:none;margin-bottom:10px;}
 input:focus{border-color:var(–gold);}
 
-/* host */
-#host{padding:20px 16px 60px;}
+/* HOST */
+#host{padding:20px 16px 80px;}
 .page-title{font-family:‘Chakra Petch’,sans-serif;font-size:1.2rem;color:var(–gold);letter-spacing:2px;text-align:center;margin-bottom:20px;}
 .player-chip{display:flex;align-items:center;justify-content:space-between;
 background:rgba(255,255,255,.04);border-radius:10px;padding:10px 14px;margin-bottom:8px;}
@@ -63,65 +58,132 @@ background:rgba(255,255,255,.04);border-radius:10px;padding:10px 14px;margin-bot
 .choice-row{display:flex;justify-content:space-between;align-items:center;
 background:rgba(255,255,255,.04);border-radius:8px;padding:9px 12px;margin-bottom:6px;font-size:.85rem;}
 
-/* join */
+/* JOIN */
 #join{background:radial-gradient(ellipse at 50% 30%,#0d2244,#050d1a 70%);}
 .join-inner{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;}
 .join-title{font-family:‘Chakra Petch’,sans-serif;font-size:clamp(1.5rem,6vw,2.5rem);
 font-weight:800;color:var(–gold);text-align:center;margin-bottom:8px;}
 .join-sub{color:var(–muted);text-align:center;margin-bottom:24px;font-size:.9rem;}
 .join-form{width:100%;max-width:340px;}
-.w-chip{background:rgba(255,255,255,.05);border-radius:10px;padding:9px 14px;margin-bottom:8px;
-font-size:.9rem;animation:slideIn .3s ease;}
+.w-chip{background:rgba(255,255,255,.05);border-radius:10px;padding:9px 14px;margin-bottom:8px;font-size:.9rem;animation:slideIn .3s ease;}
 @keyframes slideIn{from{transform:translateX(-16px);opacity:0}to{transform:none;opacity:1}}
 
-/* player */
-#player{background:var(–bg);}
-.player-inner{min-height:100vh;display:flex;flex-direction:column;align-items:center;
-padding:20px 16px 60px;max-width:460px;margin:0 auto;}
-.page-header{font-family:‘Chakra Petch’,sans-serif;font-size:1.1rem;color:var(–gold);
-letter-spacing:2px;text-align:center;margin-bottom:18px;}
-
-/* display */
+/* DISPLAY */
 #display{background:var(–bg);}
 .disp-header{display:flex;align-items:center;padding:12px 24px;
 border-bottom:1px solid var(–border);background:var(–panel);position:sticky;top:0;z-index:10;}
 .disp-logo{font-family:‘Chakra Petch’,sans-serif;font-weight:800;font-size:1.2rem;color:var(–gold);letter-spacing:3px;flex-shrink:0;}
 .scoreboard{display:flex;gap:8px;overflow-x:auto;padding:2px 0;flex:1;margin-left:16px;justify-content:flex-end;}
 .sc{background:rgba(255,255,255,.06);border:1px solid var(–border);border-radius:10px;
-padding:6px 12px;text-align:center;min-width:72px;flex-shrink:0;transition:border-color .3s;}
-.sc.active{border-color:var(–gold);}
+padding:6px 12px;text-align:center;min-width:72px;flex-shrink:0;}
 .sc-name{font-size:.65rem;color:var(–muted);}
 .sc-val{font-family:‘Chakra Petch’,sans-serif;font-size:.95rem;font-weight:700;color:var(–gold);}
 .disp-main{display:flex;align-items:center;justify-content:center;padding:24px;min-height:calc(100vh - 56px);}
+
+/* PLAYER */
+#player{background:var(–bg);}
+.player-inner{min-height:100vh;display:flex;flex-direction:column;align-items:center;
+padding:20px 16px 80px;max-width:480px;margin:0 auto;}
+.page-header{font-family:‘Chakra Petch’,sans-serif;font-size:1.1rem;color:var(–gold);
+letter-spacing:2px;text-align:center;margin-bottom:16px;}
 
 /* idle */
 .idle-wrap{text-align:center;}
 .idle-ship{font-size:clamp(4rem,14vw,9rem);animation:float 3s ease-in-out infinite;}
 .idle-t{font-family:‘Chakra Petch’,sans-serif;font-size:clamp(1rem,3vw,2rem);color:var(–muted);margin-top:16px;}
 .idle-sub{font-size:clamp(.7rem,1.5vw,.9rem);color:rgba(255,255,255,.25);margin-top:8px;}
-.w-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:20px;max-width:600px;}
+.w-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:20px;max-width:700px;}
 .w-badge{background:rgba(255,255,255,.07);border:1px solid var(–border);border-radius:50px;padding:6px 16px;font-size:.9rem;}
 
-/* cargo grid */
-.cr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;width:100%;max-width:840px;}
-.cr-card{background:rgba(255,255,255,.05);border:1px solid var(–border);border-radius:14px;
-padding:14px;text-align:center;transition:border-color .3s;}
-.cr-card.decided{border-color:var(–green);}
-.cr-icon{font-size:clamp(1.8rem,4vw,3rem);}
-.cr-pname{font-size:clamp(.62rem,1.1vw,.82rem);color:var(–muted);margin-top:6px;}
-.cr-cname{font-size:clamp(.75rem,1.4vw,1rem);font-weight:700;margin-top:3px;}
-.cr-val{font-size:clamp(.62rem,1.1vw,.78rem);color:var(–gold);margin-top:4px;}
-.cr-icc{font-size:clamp(.58rem,1vw,.72rem);color:var(–muted);margin-top:3px;}
+/* cargo pick grid (player) */
+.cargo-pick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;margin-bottom:14px;}
+.cargo-pick-card{background:rgba(255,255,255,.04);border:2px solid var(–border);
+border-radius:14px;padding:14px 10px;text-align:center;cursor:pointer;transition:all .2s;position:relative;}
+.cargo-pick-card:active{transform:scale(.97);}
+.cargo-pick-card.selected{border-color:var(–gold);background:rgba(245,200,66,.1);}
+.cargo-pick-card.used{opacity:.35;cursor:not-allowed;border-style:dashed;}
+.cargo-pick-card.used::after{content:‘ส่งแล้ว’;position:absolute;top:50%;left:50%;
+transform:translate(-50%,-50%);font-size:.7rem;color:var(–muted);background:rgba(5,13,26,.8);
+padding:3px 8px;border-radius:20px;white-space:nowrap;}
+.cpc-icon{font-size:2rem;}
+.cpc-name{font-size:.8rem;font-weight:700;margin-top:6px;}
+.cpc-route{font-size:.65rem;color:var(–muted);margin-top:2px;}
+.cpc-val{font-size:.72rem;color:var(–gold);margin-top:4px;font-family:‘Chakra Petch’,sans-serif;}
+.cpc-round{font-size:.6rem;color:var(–green);margin-top:2px;}
 
-/* event grid */
+/* ICC options */
+.icc-select{width:100%;display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+.icc-opt{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.04);
+border:2px solid var(–border);border-radius:12px;padding:13px 14px;cursor:pointer;transition:all .2s;width:100%;text-align:left;}
+.icc-opt:active{transform:scale(.98);}
+.icc-opt.sel-none{border-color:var(–red);background:rgba(230,57,70,.1);}
+.icc-opt.sel-iccC{border-color:#aaa;background:rgba(170,170,170,.07);}
+.icc-opt.sel-iccB{border-color:var(–blue);background:rgba(72,149,239,.1);}
+.icc-opt.sel-iccA{border-color:var(–gold);background:rgba(245,200,66,.1);}
+.io-icon{font-size:1.4rem;width:28px;text-align:center;flex-shrink:0;}
+.io-text{flex:1;}
+.io-name{font-family:‘Chakra Petch’,sans-serif;font-size:.9rem;font-weight:700;}
+.io-desc{font-size:.73rem;color:var(–muted);margin-top:2px;line-height:1.4;}
+.io-cost{font-family:‘Chakra Petch’,sans-serif;font-size:.82rem;color:var(–gold);flex-shrink:0;}
+
+/* selected cargo banner */
+.sel-cargo-banner{background:linear-gradient(135deg,rgba(26,58,110,.8),rgba(10,22,40,.9));
+border:1px solid var(–blue);border-radius:14px;padding:14px;margin-bottom:14px;
+display:flex;align-items:center;gap:14px;width:100%;}
+.scb-icon{font-size:2.2rem;flex-shrink:0;}
+.scb-info{flex:1;}
+.scb-name{font-family:‘Chakra Petch’,sans-serif;font-size:1rem;font-weight:800;}
+.scb-sub{font-size:.75rem;color:var(–muted);margin-top:2px;}
+.scb-val{font-size:.85rem;color:var(–gold);margin-top:4px;font-family:‘Chakra Petch’,sans-serif;}
+.scb-change{font-size:.75rem;cursor:pointer;color:var(–muted);text-decoration:underline;margin-top:4px;}
+
+/* budget row */
+.budget-row{display:flex;justify-content:space-between;align-items:center;
+background:rgba(255,255,255,.04);border-radius:10px;padding:10px 14px;margin-bottom:14px;width:100%;}
+.br-l{font-size:.75rem;color:var(–muted);}
+.br-v{font-family:‘Chakra Petch’,sans-serif;font-size:.9rem;color:var(–gold);}
+
+/* result */
+.rp-event{border-radius:14px;padding:18px;margin-bottom:12px;text-align:center;width:100%;}
+.rp-event.safe{background:rgba(45,198,83,.1);border:1px solid var(–green);}
+.rp-event.partial_minor,.rp-event.partial_major{background:rgba(255,209,102,.1);border:1px solid var(–yellow);}
+.rp-event.theft{background:rgba(150,50,200,.1);border:1px solid #a050d0;}
+.rp-event.total{background:rgba(230,57,70,.1);border:1px solid var(–red);}
+.rp-event.bonus{background:rgba(245,200,66,.1);border:1px solid var(–gold);}
+.rp-ev-icon{font-size:2.5rem;}
+.rp-ev-title{font-family:‘Chakra Petch’,sans-serif;font-size:1rem;font-weight:700;margin-top:8px;}
+.rp-ev-desc{font-size:.78rem;color:rgba(255,255,255,.7);margin-top:4px;}
+.rp-breakdown{background:rgba(255,255,255,.04);border-radius:12px;padding:14px;margin-bottom:12px;width:100%;}
+.rb-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.88rem;}
+.rb-row:last-child{border-bottom:none;}
+.rb-label{color:var(–muted);}
+.rb-val{font-family:‘Chakra Petch’,sans-serif;font-weight:600;}
+.pos{color:var(–green)}.neg{color:var(–red)}.gold-c{color:var(–gold)}
+.rp-total{font-family:‘Chakra Petch’,sans-serif;font-size:1.5rem;font-weight:800;
+text-align:center;padding:14px;background:rgba(255,255,255,.05);border-radius:12px;
+margin-bottom:10px;width:100%;}
+.claim-box{background:rgba(45,198,83,.08);border:1px solid rgba(45,198,83,.3);
+border-radius:10px;padding:11px 14px;margin-bottom:10px;font-size:.8rem;line-height:1.7;width:100%;}
+.no-claim-box{background:rgba(230,57,70,.08);border:1px solid rgba(230,57,70,.3);
+border-radius:10px;padding:11px 14px;margin-bottom:10px;font-size:.8rem;line-height:1.7;width:100%;}
+
+/* display cargo status */
+.disp-cargo-pool{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px;max-width:900px;}
+.dcp-item{background:rgba(255,255,255,.06);border:1px solid var(–border);
+border-radius:12px;padding:10px 14px;text-align:center;min-width:100px;}
+.dcp-item.current{border-color:var(–gold);background:rgba(245,200,66,.1);}
+.dcp-icon{font-size:1.6rem;}
+.dcp-name{font-size:.72rem;font-weight:700;margin-top:4px;}
+.dcp-round{font-size:.62rem;color:var(–muted);margin-top:2px;}
+
+/* player cards on display */
 .ev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;width:100%;max-width:1000px;}
 .ev-card{background:rgba(255,255,255,.05);border:1px solid var(–border);border-radius:16px;padding:16px;text-align:center;}
 .ev-big-icon{font-size:clamp(1.8rem,4vw,3rem);}
 .ev-title{font-family:‘Chakra Petch’,sans-serif;font-size:clamp(.62rem,1.3vw,.92rem);font-weight:700;margin-top:8px;}
-.ev-player{font-size:clamp(.58rem,1vw,.72rem);color:var(–muted);}
-.ev-icc{font-size:clamp(.55rem,.9vw,.68rem);color:var(–muted);}
+.ev-sub{font-size:clamp(.58rem,1vw,.72rem);color:var(–muted);}
+.ev-cargo{font-size:clamp(.6rem,1vw,.75rem);color:var(–blue);margin-top:2px;}
 .ev-change{font-family:‘Chakra Petch’,sans-serif;font-size:clamp(.9rem,2vw,1.4rem);font-weight:800;margin-top:8px;}
-.pos{color:var(–green)}.neg{color:var(–red)}.gold-c{color:var(–gold)}
 
 /* leaderboard */
 .lb-wrap{text-align:center;width:100%;}
@@ -137,69 +199,34 @@ border:1px solid var(–border);border-radius:16px;padding:16px 22px;animation:s
 .lb-name{flex:1;font-size:clamp(.9rem,2vw,1.4rem);font-weight:600;}
 .lb-profit{font-family:‘Chakra Petch’,sans-serif;font-size:clamp(1rem,2.5vw,1.6rem);font-weight:700;}
 
-/* player cargo */
-.mc-banner{background:linear-gradient(135deg,rgba(26,58,110,.8),rgba(10,22,40,.9));
-border:1px solid var(–blue);border-radius:18px;padding:22px;margin-bottom:16px;text-align:center;width:100%;}
-.mc-icon{font-size:3rem;}
-.mc-name{font-family:‘Chakra Petch’,sans-serif;font-size:1.3rem;font-weight:800;margin-top:8px;}
-.mc-sub{font-size:.82rem;color:var(–muted);margin-top:4px;}
-.mc-val{display:inline-block;margin-top:10px;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.3);
-border-radius:50px;padding:6px 20px;font-family:‘Chakra Petch’,sans-serif;font-size:1.05rem;color:var(–gold);}
-
-/* icc options */
-.icc-select{width:100%;display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
-.icc-opt{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.04);
-border:2px solid var(–border);border-radius:12px;padding:13px 14px;cursor:pointer;transition:all .2s;width:100%;text-align:left;}
-.icc-opt:active{transform:scale(.98);}
-.icc-opt.sel-none{border-color:var(–red);background:rgba(230,57,70,.1);}
-.icc-opt.sel-iccC{border-color:#aaa;background:rgba(170,170,170,.07);}
-.icc-opt.sel-iccB{border-color:var(–blue);background:rgba(72,149,239,.1);}
-.icc-opt.sel-iccA{border-color:var(–gold);background:rgba(245,200,66,.1);}
-.io-icon{font-size:1.4rem;width:28px;text-align:center;flex-shrink:0;}
-.io-text{flex:1;}
-.io-name{font-family:‘Chakra Petch’,sans-serif;font-size:.9rem;font-weight:700;}
-.io-desc{font-size:.73rem;color:var(–muted);margin-top:2px;line-height:1.4;}
-.io-cost{font-family:‘Chakra Petch’,sans-serif;font-size:.82rem;color:var(–gold);flex-shrink:0;}
-
-/* result */
-.rp-event{border-radius:14px;padding:18px;margin-bottom:14px;text-align:center;width:100%;}
-.rp-event.safe{background:rgba(45,198,83,.1);border:1px solid var(–green);}
-.rp-event.partial_minor,.rp-event.partial_major{background:rgba(255,209,102,.1);border:1px solid var(–yellow);}
-.rp-event.theft{background:rgba(150,50,200,.1);border:1px solid #a050d0;}
-.rp-event.total{background:rgba(230,57,70,.1);border:1px solid var(–red);}
-.rp-event.bonus{background:rgba(245,200,66,.1);border:1px solid var(–gold);}
-.rp-ev-icon{font-size:2.5rem;}
-.rp-ev-title{font-family:‘Chakra Petch’,sans-serif;font-size:1rem;font-weight:700;margin-top:8px;}
-.rp-ev-desc{font-size:.78rem;color:rgba(255,255,255,.7);margin-top:4px;}
-.rp-breakdown{background:rgba(255,255,255,.04);border-radius:12px;padding:14px;margin-bottom:12px;width:100%;}
-.rb-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.88rem;}
-.rb-row:last-child{border-bottom:none;}
-.rb-label{color:var(–muted);}
-.rb-val{font-family:‘Chakra Petch’,sans-serif;font-weight:600;}
-.rp-total{font-family:‘Chakra Petch’,sans-serif;font-size:1.5rem;font-weight:800;
-text-align:center;padding:14px;background:rgba(255,255,255,.05);border-radius:12px;margin-bottom:10px;width:100%;}
-.claim-box{background:rgba(45,198,83,.08);border:1px solid rgba(45,198,83,.3);
-border-radius:10px;padding:11px 14px;margin-bottom:10px;font-size:.8rem;line-height:1.7;width:100%;}
-.no-claim-box{background:rgba(230,57,70,.08);border:1px solid rgba(230,57,70,.3);
-border-radius:10px;padding:11px 14px;margin-bottom:10px;font-size:.8rem;line-height:1.7;width:100%;}
-.budget-row{display:flex;justify-content:space-between;align-items:center;
-background:rgba(255,255,255,.04);border-radius:10px;padding:10px 14px;margin-bottom:14px;width:100%;}
-.br-l{font-size:.75rem;color:var(–muted);}
-.br-v{font-family:‘Chakra Petch’,sans-serif;font-size:.9rem;color:var(–gold);}
-
-/* spinner overlay */
+/* loading */
 #loading{display:none;position:fixed;inset:0;background:rgba(5,13,26,.85);
 z-index:100;align-items:center;justify-content:center;flex-direction:column;gap:16px;}
 #loading.show{display:flex;}
 .spin-ring{width:48px;height:48px;border:4px solid rgba(255,255,255,.1);
 border-top-color:var(–gold);border-radius:50%;animation:spin 1s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg)}}
+
+/* round banner on display */
+.round-banner{font-family:‘Chakra Petch’,sans-serif;font-size:clamp(.9rem,2.5vw,1.6rem);
+color:var(–muted);text-align:center;margin-bottom:18px;letter-spacing:1px;}
+
+/* event banner display */
+.ev-announce{border-radius:20px;padding:clamp(14px,3vw,28px);text-align:center;margin-bottom:20px;max-width:500px;width:100%;}
+.ev-announce.safe{background:rgba(45,198,83,.12);border:2px solid var(–green);}
+.ev-announce.partial_minor,.ev-announce.partial_major{background:rgba(255,209,102,.12);border:2px solid var(–yellow);}
+.ev-announce.theft{background:rgba(150,50,200,.12);border:2px solid #a050d0;}
+.ev-announce.total{background:rgba(230,57,70,.12);border:2px solid var(–red);}
+.ev-announce.bonus{background:rgba(245,200,66,.12);border:2px solid var(–gold);}
+.ev-ann-icon{font-size:clamp(3rem,8vw,6rem);}
+.ev-ann-title{font-family:‘Chakra Petch’,sans-serif;font-size:clamp(1.2rem,3.5vw,2.5rem);font-weight:800;margin-top:10px;}
+.ev-ann-desc{font-size:clamp(.75rem,1.5vw,1rem);color:rgba(255,255,255,.7);margin-top:6px;}
 </style>
 
 </head>
 <body>
 
-<div id="loading"><div class="spin-ring"></div><div style="color:var(--muted);font-size:.9rem;">กำลังเชื่อมต่อ...</div></div>
+<div id="loading"><div class="spin-ring"></div><div style="color:var(--muted);font-size:.9rem;">กำลังโหลด...</div></div>
 
 <!-- SPLASH -->
 
@@ -217,47 +244,44 @@ border-top-color:var(–gold);border-radius:50%;animation:spin 1s linear infinit
 <!-- HOST -->
 
 <div class="screen" id="host">
-  <div style="max-width:460px;margin:0 auto;padding:20px 16px 60px;">
+  <div style="max-width:460px;margin:0 auto;padding:20px 16px 80px;">
     <div class="page-title">🎛️ HOST PANEL</div>
-
-```
-<div id="host-setup">
-  <div class="card">
-    <div class="card-label">ตั้งค่าเกม</div>
-    <div class="setting-row">
-      <div><label>จำนวนรอบ</label><input type="number" id="cfg-rounds" value="3" min="1" max="10"></div>
-      <div><label>งบเริ่มต้น (บาท)</label><input type="number" id="cfg-budget" value="1000000" step="100000"></div>
+    <div id="host-setup">
+      <div class="card">
+        <div class="card-label">ตั้งค่าเกม</div>
+        <div class="setting-row">
+          <div><label>จำนวนรอบ</label><input type="number" id="cfg-rounds" value="5" min="1" max="12"></div>
+          <div><label>งบเริ่มต้น (บาท)</label><input type="number" id="cfg-budget" value="1000000" step="100000"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">ผู้เล่นที่รอ (<span id="host-count">0</span>)</div>
+        <div id="host-player-list" style="min-height:36px;"></div>
+        <p style="font-size:.78rem;color:var(--muted);margin-top:8px;">
+          ให้นักเรียนเปิดไฟล์นี้ → เลือก <strong style="color:var(--text)">👤 ผู้เล่น</strong> → ใส่ชื่อ
+        </p>
+      </div>
+      <button class="btn btn-green btn-full" onclick="hostStart()">🚀 เริ่มเกม!</button>
+      <button class="btn btn-red btn-full" onclick="hostReset()">🗑️ รีเซ็ต</button>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-label">ผู้เล่นที่รอ (<span id="host-count">0</span>)</div>
-    <div id="host-player-list" style="min-height:36px;"></div>
-    <p style="font-size:.78rem;color:var(--muted);margin-top:8px;">
-      ให้นักเรียนเปิดไฟล์นี้บนมือถือ → เลือก <strong style="color:var(--text)">👤 ผู้เล่น</strong> → ใส่ชื่อ
-    </p>
-  </div>
-  <button class="btn btn-green btn-full" id="start-btn" onclick="hostStart()">🚀 เริ่มเกม!</button>
-  <button class="btn btn-red btn-full" onclick="hostReset()">🗑️ รีเซ็ตเกม</button>
-</div>
-
-<div id="host-game" style="display:none;">
-  <div class="card">
-    <div class="card-label">รอบที่ <span id="hg-round">-</span></div>
-    <div id="hg-status" style="font-size:.9rem;color:var(--muted);margin-bottom:12px;">-</div>
-    <div id="hg-choices"></div>
-  </div>
-  <button class="btn btn-gold btn-full" id="hg-spin" onclick="hostSpin()" style="display:none;">🎲 จั่วเหตุการณ์!</button>
-  <button class="btn btn-ghost btn-full" id="hg-next" onclick="hostNext()" style="display:none;">รอบถัดไป →</button>
-</div>
-
-<div id="host-end" style="display:none;">
-  <div class="card">
-    <button class="btn btn-gold btn-full" onclick="hostLeaderboard()">🏆 แสดงผลสรุปบนจอใหญ่</button>
-    <button class="btn btn-ghost btn-full" onclick="hostReset()">🔄 เล่นใหม่</button>
-  </div>
-</div>
-```
-
+    <div id="host-game" style="display:none;">
+      <div class="card">
+        <div class="card-label">รอบที่ <span id="hg-round">-</span></div>
+        <div id="hg-event-box" style="margin-bottom:10px;padding:10px;background:rgba(255,255,255,.04);border-radius:10px;font-size:.85rem;">
+          <span style="color:var(--muted);">เหตุการณ์รอบนี้: </span><span id="hg-ev-name" style="color:var(--gold);">-</span>
+        </div>
+        <div id="hg-status" style="font-size:.9rem;color:var(--muted);margin-bottom:12px;">-</div>
+        <div id="hg-choices"></div>
+      </div>
+      <button class="btn btn-gold btn-full" id="hg-spin" onclick="hostSpin()" style="display:none;">🎲 จั่วเหตุการณ์!</button>
+      <button class="btn btn-ghost btn-full" id="hg-next" onclick="hostNext()" style="display:none;">รอบถัดไป →</button>
+    </div>
+    <div id="host-end" style="display:none;">
+      <div class="card">
+        <button class="btn btn-gold btn-full" onclick="hostLeaderboard()">🏆 แสดงผลสรุปบนจอใหญ่</button>
+        <button class="btn btn-ghost btn-full" onclick="hostReset()">🔄 เล่นใหม่</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -296,55 +320,49 @@ border-top-color:var(–gold);border-radius:50%;animation:spin 1s linear infinit
 
 <script>
 // ══ FIREBASE ══
-const FB_URL = 'https://cargo-insurance-82335-default-rtdb.asia-southeast1.firebasedatabase.app';
-firebase.initializeApp({ databaseURL: FB_URL });
-const db = firebase.database();
-const gameRef = db.ref('game');
+const FB_URL='https://cargo-insurance-82335-default-rtdb.asia-southeast1.firebasedatabase.app';
+firebase.initializeApp({databaseURL:FB_URL});
+const db=firebase.database();
+const gameRef=db.ref('game');
 
 // ══ DATA ══
-const CARGOS = [
-  {icon:'📱',name:'สมาร์ทโฟน',     route:'ไทย → ยุโรป',        risk:'⚠️ สูง',    value:500000},
-  {icon:'🌾',name:'ข้าวสาร',       route:'ไทย → ตะวันออกกลาง', risk:'✅ ต่ำ',    value:200000},
-  {icon:'⚗️',name:'สารเคมี',       route:'ไทย → อเมริกา',      risk:'🔴 สูงมาก', value:350000},
-  {icon:'💎',name:'เครื่องประดับ', route:'ไทย → ญี่ปุ่น',      risk:'⚠️ สูง',    value:800000},
-  {icon:'🚗',name:'ชิ้นส่วนรถยนต์',route:'ไทย → จีน',          risk:'🟡 ปานกลาง',value:300000},
-  {icon:'🖥️',name:'อุปกรณ์คอมฯ',  route:'ไทย → อินเดีย',      risk:'⚠️ สูง',    value:420000},
-  {icon:'🧴',name:'เครื่องสำอาง', route:'ไทย → เกาหลี',        risk:'✅ ต่ำ',    value:180000},
-  {icon:'🐟',name:'อาหารทะเล',     route:'ไทย → ออสเตรเลีย',   risk:'🟡 ปานกลาง',value:250000},
-  {icon:'🛢️',name:'น้ำมันปาล์ม',  route:'ไทย → อินเดีย',      risk:'✅ ต่ำ',    value:150000},
-  {icon:'🏗️',name:'เครื่องจักร',  route:'ไทย → แอฟริกา',      risk:'🟡 ปานกลาง',value:600000},
-  {icon:'🍫',name:'ช็อกโกแลต',    route:'ไทย → สหรัฐฯ',       risk:'✅ ต่ำ',    value:120000},
-  {icon:'🔋',name:'แบตเตอรี่ EV',  route:'ไทย → ยุโรป',        risk:'🔴 สูงมาก', value:750000},
+const CARGOS=[
+  {icon:'📱',name:'สมาร์ทโฟน',    route:'ไทย → ยุโรป',        risk:'⚠️ สูง',    value:500000},
+  {icon:'🌾',name:'ข้าวสาร',      route:'ไทย → ตะวันออกกลาง', risk:'✅ ต่ำ',    value:200000},
+  {icon:'⚗️',name:'สารเคมี',      route:'ไทย → อเมริกา',      risk:'🔴 สูงมาก', value:350000},
+  {icon:'💎',name:'เครื่องประดับ',route:'ไทย → ญี่ปุ่น',      risk:'⚠️ สูง',    value:800000},
+  {icon:'🚗',name:'ชิ้นส่วนรถยนต์',route:'ไทย → จีน',         risk:'🟡 ปานกลาง',value:300000},
+  {icon:'🖥️',name:'อุปกรณ์คอมฯ', route:'ไทย → อินเดีย',      risk:'⚠️ สูง',    value:420000},
+  {icon:'🧴',name:'เครื่องสำอาง', route:'ไทย → เกาหลี',       risk:'✅ ต่ำ',    value:180000},
+  {icon:'🐟',name:'อาหารทะเล',    route:'ไทย → ออสเตรเลีย',   risk:'🟡 ปานกลาง',value:250000},
+  {icon:'🛢️',name:'น้ำมันปาล์ม', route:'ไทย → อินเดีย',      risk:'✅ ต่ำ',    value:150000},
+  {icon:'🏗️',name:'เครื่องจักร', route:'ไทย → แอฟริกา',      risk:'🟡 ปานกลาง',value:600000},
+  {icon:'🍫',name:'ช็อกโกแลต',   route:'ไทย → สหรัฐฯ',       risk:'✅ ต่ำ',    value:120000},
+  {icon:'🔋',name:'แบตเตอรี่ EV', route:'ไทย → ยุโรป',        risk:'🔴 สูงมาก', value:750000},
 ];
-const ICC = {
-  none: {id:'none',icon:'❌',name:'ไม่ซื้อประกัน',   rate:0,   desc:'รับความเสียหายทั้งหมดเอง ไม่มีการเคลม'},
-  iccC: {id:'iccC',icon:'🔵',name:'ICC C',           rate:.01, desc:'คุ้มครองเฉพาะ Total Loss (จมเรือ/โจรสลัด/ระเบิด)'},
-  iccB: {id:'iccB',icon:'🟣',name:'ICC B',           rate:.02, desc:'Total Loss + ความเสียหายหลัก (พายุ/เครนตก/ไฟไหม้)'},
-  iccA: {id:'iccA',icon:'🟡',name:'ICC A (All Risks)',rate:.03, desc:'All Risks รวมถึงขโมย/ความชื้น/แมลง'},
+const ICC={
+  none:{id:'none',icon:'❌',name:'ไม่ซื้อประกัน',   rate:0,   desc:'รับความเสียหายทั้งหมดเอง ไม่มีการเคลม'},
+  iccC:{id:'iccC',icon:'🔵',name:'ICC C',           rate:.01, desc:'คุ้มครองเฉพาะ Total Loss (จมเรือ/โจรสลัด/ระเบิด)'},
+  iccB:{id:'iccB',icon:'🟣',name:'ICC B',           rate:.02, desc:'Total Loss + ความเสียหายหลัก (พายุ/เครนตก/ไฟไหม้)'},
+  iccA:{id:'iccA',icon:'🟡',name:'ICC A (All Risks)',rate:.03, desc:'All Risks รวมถึงขโมย/ความชื้น'},
 };
-const EVENTS = [
-  // SAFE — ได้กำไรเต็มมูลค่าสินค้า
-  {type:'safe', icon:'⚓', title:'ส่งถึงปลายทางปลอดภัย',  desc:'เรือแล่นตามกำหนด ไม่มีเหตุการณ์ใด',       lossRate:0, covers:[], w:8},
-  {type:'safe', icon:'🌤️',title:'สภาพอากาศดีเยี่ยม',     desc:'ทะเลสงบ เรือถึงเร็วกว่ากำหนด',            lossRate:0, covers:[], w:7},
-  {type:'safe', icon:'📦',title:'สินค้าถึงครบถ้วน',       desc:'บรรจุภัณฑ์สมบูรณ์ ลูกค้าพอใจมาก',        lossRate:0, covers:[], w:6},
-  {type:'safe', icon:'🛳️',title:'เรือเดินทางราบรื่น',     desc:'ไม่มีความเสียหายใดๆ ระหว่างการขนส่ง',     lossRate:0, covers:[], w:5},
-  // PARTIAL MINOR — ICC A เท่านั้น
-  {type:'partial_minor',icon:'💧',title:'ความชื้นทำสินค้าเสียหาย',desc:'ความชื้นในตู้สูง สินค้าเสียหาย 20%',  lossRate:.20,covers:['iccA'], w:4},
-  {type:'partial_minor',icon:'🐛',title:'แมลงรบกวนสินค้า',       desc:'สินค้าเกษตรเสียหาย 15%',              lossRate:.15,covers:['iccA'], w:3},
-  // PARTIAL MAJOR — ICC B, A
-  {type:'partial_major',icon:'🌊',title:'คลื่นพายุเข้าปะทะ',     desc:'น้ำทะเลเข้าระวาง สินค้าเสียหาย 35%', lossRate:.35,covers:['iccB','iccA'], w:5},
-  {type:'partial_major',icon:'🏗️',title:'ตู้ตกระหว่างขนถ่าย',   desc:'เครนขัดข้อง สินค้าเสียหาย 30%',      lossRate:.30,covers:['iccB','iccA'], w:5},
-  {type:'partial_major',icon:'🔥',title:'ไฟไหม้บางส่วน',          desc:'เพลิงไหม้ในระวาง สินค้าเสียหาย 50%', lossRate:.50,covers:['iccB','iccA'], w:4},
-  {type:'partial_major',icon:'🥵',title:'ระบบทำความเย็นขัดข้อง', desc:'Refrigeration เสีย สินค้าเสียหาย 40%',lossRate:.40,covers:['iccB','iccA'], w:3},
-  // THEFT — ICC A เท่านั้น
-  {type:'theft', icon:'🥷',title:'สินค้าถูกขโมย',         desc:'สินค้าหายระหว่างขนถ่าย 40%',               lossRate:.40,covers:['iccA'], w:3},
-  // TOTAL LOSS — ICC C, B, A
-  {type:'total', icon:'🌀',title:'พายุไต้ฝุ่น!',           desc:'เรือล่มกลางทะเล สูญเสียทั้งหมด',           lossRate:1,  covers:['iccC','iccB','iccA'], w:3},
-  {type:'total', icon:'🏴‍☠️',title:'โจรสลัดโจมตี!',         desc:'เรือถูกยึด สูญเสียทั้งหมด',               lossRate:1,  covers:['iccC','iccB','iccA'], w:2},
-  {type:'total', icon:'💥',title:'ระเบิดในระวาง!',          desc:'เหตุไม่คาดฝัน สูญเสียทั้งหมด',            lossRate:1,  covers:['iccC','iccB','iccA'], w:2},
-  // BONUS
-  {type:'bonus', icon:'⭐',title:'สินค้าขาดตลาด!',         desc:'ราคาพุ่งสูง ได้โบนัสพิเศษ +20%',          lossRate:-.20,covers:[], w:2},
-  {type:'bonus', icon:'🏆',title:'ลูกค้าสั่งซื้อเพิ่ม!',   desc:'ส่งเร็วกว่ากำหนด โบนัสพิเศษ +15%',        lossRate:-.15,covers:[], w:2},
+const EVENTS=[
+  {type:'safe',         icon:'⚓', title:'ส่งถึงปลายทางปลอดภัย', desc:'เรือแล่นตามกำหนด ไม่มีเหตุการณ์ใด',        lossRate:0,   covers:[], w:8},
+  {type:'safe',         icon:'🌤️',title:'สภาพอากาศดีเยี่ยม',    desc:'ทะเลสงบ เรือถึงเร็วกว่ากำหนด',             lossRate:0,   covers:[], w:7},
+  {type:'safe',         icon:'📦', title:'สินค้าถึงครบถ้วน',      desc:'บรรจุภัณฑ์สมบูรณ์ ลูกค้าพอใจมาก',         lossRate:0,   covers:[], w:6},
+  {type:'safe',         icon:'🛳️',title:'เรือเดินทางราบรื่น',    desc:'ไม่มีความเสียหายใดๆ ระหว่างการขนส่ง',      lossRate:0,   covers:[], w:5},
+  {type:'partial_minor',icon:'💧', title:'ความชื้นทำสินค้าเสียหาย',desc:'ความชื้นในตู้สูง สินค้าเสียหาย 20%',    lossRate:.20, covers:['iccA'], w:4},
+  {type:'partial_minor',icon:'🐛', title:'แมลงรบกวนสินค้า',       desc:'สินค้าเกษตรเสียหาย 15%',                  lossRate:.15, covers:['iccA'], w:3},
+  {type:'partial_major',icon:'🌊', title:'คลื่นพายุเข้าปะทะ',     desc:'น้ำทะเลเข้าระวาง สินค้าเสียหาย 35%',     lossRate:.35, covers:['iccB','iccA'], w:5},
+  {type:'partial_major',icon:'🏗️',title:'ตู้ตกระหว่างขนถ่าย',   desc:'เครนขัดข้อง สินค้าเสียหาย 30%',           lossRate:.30, covers:['iccB','iccA'], w:5},
+  {type:'partial_major',icon:'🔥', title:'ไฟไหม้บางส่วน',          desc:'เพลิงไหม้ในระวาง สินค้าเสียหาย 50%',     lossRate:.50, covers:['iccB','iccA'], w:4},
+  {type:'partial_major',icon:'🥵', title:'ระบบทำความเย็นขัดข้อง', desc:'Refrigeration เสีย สินค้าเสียหาย 40%',   lossRate:.40, covers:['iccB','iccA'], w:3},
+  {type:'theft',        icon:'🥷', title:'สินค้าถูกขโมย',          desc:'สินค้าหายระหว่างขนถ่าย 40%',               lossRate:.40, covers:['iccA'], w:3},
+  {type:'total',        icon:'🌀', title:'พายุไต้ฝุ่น!',            desc:'เรือล่มกลางทะเล สูญเสียทั้งหมด',          lossRate:1,   covers:['iccC','iccB','iccA'], w:3},
+  {type:'total',        icon:'🏴‍☠️',title:'โจรสลัดโจมตี!',          desc:'เรือถูกยึด สูญเสียทั้งหมด',               lossRate:1,   covers:['iccC','iccB','iccA'], w:2},
+  {type:'total',        icon:'💥', title:'ระเบิดในระวาง!',           desc:'เหตุไม่คาดฝัน สูญเสียทั้งหมด',           lossRate:1,   covers:['iccC','iccB','iccA'], w:2},
+  {type:'bonus',        icon:'⭐', title:'สินค้าขาดตลาด!',          desc:'ราคาพุ่งสูง ได้โบนัสพิเศษ +20%',          lossRate:-.20,covers:[], w:2},
+  {type:'bonus',        icon:'🏆', title:'ลูกค้าสั่งซื้อเพิ่ม!',   desc:'ส่งเร็วกว่ากำหนด โบนัสพิเศษ +15%',        lossRate:-.15,covers:[], w:2},
 ];
 
 // ══ HELPERS ══
@@ -352,34 +370,34 @@ function fmt(n){return '฿'+Math.abs(Math.round(n)).toLocaleString('th-TH');}
 function fmtS(n){return (n>=0?'+':'-')+'฿'+Math.abs(Math.round(n)).toLocaleString('th-TH');}
 function weighted(arr){const t=arr.reduce((s,i)=>s+i.w,0);let r=Math.random()*t;for(const x of arr){r-=x.w;if(r<=0)return x;}return arr[arr.length-1];}
 function loading(on){document.getElementById('loading').className=on?'show':'';}
+function coversArr(ev){return Array.isArray(ev.covers)?ev.covers:Object.values(ev.covers||{});}
 
 let myName=null;
 let currentMode=null;
-let G=null; // live state from Firebase
+let G={};
 
-// ══ NAVIGATION ══
+// ══ NAV ══
 function gotoMode(m){
   currentMode=m;
   document.getElementById('splash').classList.remove('show');
   ['host','join','player','display'].forEach(id=>document.getElementById(id).classList.remove('show'));
   document.getElementById(m).classList.add('show');
-
   if(m==='host')   initHost();
   if(m==='join')   initJoin();
   if(m==='player') initPlayer();
   if(m==='display')initDisplay();
 }
 
-// ══ FIREBASE LISTENER ══
-function listenGame(cb){
-  gameRef.on('value', snap=>{ G=snap.val()||{}; cb(G); });
-}
+function listenGame(cb){gameRef.on('value',snap=>{G=snap.val()||{};cb(G);});}
 
 // ══ HOST ══
 function initHost(){
   listenGame(g=>{
     if(!g.phase||g.phase==='lobby'){
-      showSetup(g);
+      document.getElementById('host-setup').style.display='block';
+      document.getElementById('host-game').style.display='none';
+      document.getElementById('host-end').style.display='none';
+      renderHostSetup(g);
     } else if(g.phase==='round'||g.phase==='event'){
       document.getElementById('host-setup').style.display='none';
       document.getElementById('host-game').style.display='block';
@@ -393,10 +411,7 @@ function initHost(){
   });
 }
 
-function showSetup(g){
-  document.getElementById('host-setup').style.display='block';
-  document.getElementById('host-game').style.display='none';
-  document.getElementById('host-end').style.display='none';
+function renderHostSetup(g){
   const players=g.players?Object.values(g.players):[];
   document.getElementById('host-count').textContent=players.length;
   const list=document.getElementById('host-player-list');
@@ -406,78 +421,97 @@ function showSetup(g){
 }
 
 function hostStart(){
-  const g=G||{};
-  const players=g.players?Object.values(g.players):[];
+  const players=G.players?Object.values(G.players):[];
   if(!players.length){alert('ต้องมีผู้เล่นอย่างน้อย 1 คน');return;}
-  const rounds=parseInt(document.getElementById('cfg-rounds').value)||3;
+  const rounds=parseInt(document.getElementById('cfg-rounds').value)||5;
   const budget=parseInt(document.getElementById('cfg-budget').value)||1000000;
-  players.forEach(p=>{p.budget=budget;p.profit=0;});
+  // สุ่มสินค้า rounds ชิ้น (ไม่ซ้ำกัน)
+  const shuffled=[...CARGOS].sort(()=>Math.random()-.5).slice(0,Math.min(rounds,CARGOS.length));
+  // ถ้า rounds > 12 เพิ่มซ้ำได้
+  while(shuffled.length<rounds) shuffled.push(...CARGOS.sort(()=>Math.random()-.5).slice(0,rounds-shuffled.length));
+  const cargoPool=shuffled.slice(0,rounds);
+
   const playersObj={};
-  players.forEach(p=>{playersObj[p.name]=p;});
+  players.forEach(p=>{playersObj[p.name]={name:p.name,budget,profit:0,usedCargos:[]};});
+
   loading(true);
-  const assignments=buildAssignments(players);
   gameRef.set({
-    phase:'round',rounds,round:0,
+    phase:'round', rounds, round:0,
+    cargoPool,       // สินค้าทั้งหมด rounds ชิ้น (ทุกคนเห็นเหมือนกัน)
+    currentEvent:null,
     players:playersObj,
-    assignments,
-    displayState:{type:'cargo',round:0},
+    assignments:{},  // playerName -> {cargoIdx, icc, decided}
+    displayState:{type:'picking',round:0},
   }).then(()=>loading(false));
 }
 
-function buildAssignments(players){
-  const shuffled=[...CARGOS].sort(()=>Math.random()-.5);
-  const obj={};
-  players.forEach((p,i)=>{
-    obj[p.name]={playerName:p.name,cargo:shuffled[i%shuffled.length],icc:null,decided:false,eventResult:null};
-  });
-  return obj;
-}
-
 function renderHostGame(g){
-  document.getElementById('hg-round').textContent=`${g.round+1}/${g.rounds}`;
+  document.getElementById('hg-round').textContent=`${(g.round||0)+1}/${g.rounds}`;
   const assigns=g.assignments?Object.values(g.assignments):[];
-  const allDone=assigns.length&&assigns.every(a=>a.decided);
-  const st=document.getElementById('hg-status');
+  const playerCount=g.players?Object.keys(g.players).length:0;
+  const allDone=assigns.length===playerCount&&assigns.every(a=>a.decided);
   const spin=document.getElementById('hg-spin');
   const next=document.getElementById('hg-next');
+  const st=document.getElementById('hg-status');
+  const evName=document.getElementById('hg-ev-name');
+
+  if(g.currentEvent){
+    evName.textContent=`${g.currentEvent.icon} ${g.currentEvent.title}`;
+  } else {
+    evName.textContent='ยังไม่ได้จั่ว';
+  }
+
   if(g.phase==='event'){
     st.textContent='เหตุการณ์เกิดขึ้นแล้ว!';spin.style.display='none';next.style.display='block';
   } else if(allDone){
-    st.textContent='ทุกคนเลือกแล้ว พร้อมจั่ว! ✅';spin.style.display='block';next.style.display='none';
+    st.textContent=`ทุกคนเลือกแล้ว (${assigns.length}/${playerCount}) พร้อมจั่ว! ✅`;
+    spin.style.display='block';next.style.display='none';
   } else {
     const done=assigns.filter(a=>a.decided).length;
-    st.textContent=`รอผู้เล่นเลือกประกัน... (${done}/${assigns.length})`;
+    st.textContent=`รอผู้เล่นเลือกสินค้าและประกัน... (${done}/${playerCount})`;
     spin.style.display='none';next.style.display='none';
   }
-  document.getElementById('hg-choices').innerHTML=assigns.map(a=>`
-    <div class="choice-row">
-      <span>${a.playerName} <span style="font-size:.7rem;color:var(--muted);">${a.cargo.icon}${a.cargo.name}</span></span>
-      <span style="color:${a.decided?'var(--green)':'var(--muted)'};">${a.decided?ICC[a.icc].name:'รอ...'}</span>
-    </div>`).join('');
+
+  const pool=g.cargoPool||[];
+  document.getElementById('hg-choices').innerHTML=assigns.map(a=>{
+    const cargo=pool[a.cargoIdx];
+    return `<div class="choice-row">
+      <span>${a.playerName} ${cargo?cargo.icon+cargo.name:''}</span>
+      <span style="color:${a.decided?'var(--green)':'var(--muted)'};">${a.decided?(ICC[a.icc]?ICC[a.icc].name:'?'):'รอ...'}</span>
+    </div>`;
+  }).join('');
 }
 
 function hostSpin(){
   const g=G;
+  const ev=weighted(EVENTS);
   const assigns=g.assignments?Object.values(g.assignments):[];
   const players=g.players||{};
+  const pool=g.cargoPool||[];
+
   assigns.forEach(a=>{
-    const ev=weighted(EVENTS);
+    const cargo=pool[a.cargoIdx];
+    if(!cargo)return;
     const icc=ICC[a.icc];
-    const cv=a.cargo.value;
+    const cv=cargo.value;
     const premium=Math.round(cv*icc.rate);
     const rawLoss=ev.lossRate>0?Math.round(cv*ev.lossRate):0;
     const bonus=ev.lossRate<0?Math.round(cv*Math.abs(ev.lossRate)):0;
-    const canClaim=ev.covers.includes(a.icc);
+    const covers=coversArr(ev);
+    const canClaim=covers.includes(a.icc);
     const claimAmt=canClaim?rawLoss:0;
     const netChange=cv-rawLoss+claimAmt+bonus-premium;
-    a.eventResult={ev,rawLoss,bonus,premium,claimAmt,netChange,canClaim,cargoVal:cv};
+    a.eventResult={ev,rawLoss,bonus,premium,claimAmt,netChange,canClaim,cargoVal:cv,cargoName:cargo.name,cargoIcon:cargo.icon};
     if(players[a.playerName]) players[a.playerName].profit=(players[a.playerName].profit||0)+netChange;
   });
+
   const assignsObj={};
   assigns.forEach(a=>{assignsObj[a.playerName]=a;});
+
   loading(true);
   gameRef.update({
     phase:'event',
+    currentEvent:ev,
     assignments:assignsObj,
     players,
     displayState:{type:'event',round:g.round},
@@ -486,16 +520,15 @@ function hostSpin(){
 
 function hostNext(){
   const g=G;
-  const nextRound=g.round+1;
+  const nextRound=(g.round||0)+1;
   if(nextRound>=g.rounds){
     loading(true);
-    gameRef.update({phase:'end',displayState:null}).then(()=>loading(false));
+    gameRef.update({phase:'end',displayState:null,currentEvent:null,assignments:{}}).then(()=>loading(false));
     return;
   }
-  const players=g.players?Object.values(g.players):[];
-  const assignments=buildAssignments(players);
   loading(true);
-  gameRef.update({phase:'round',round:nextRound,assignments,displayState:{type:'cargo',round:nextRound}}).then(()=>loading(false));
+  gameRef.update({phase:'round',round:nextRound,assignments:{},currentEvent:null,
+    displayState:{type:'picking',round:nextRound}}).then(()=>loading(false));
 }
 
 function hostLeaderboard(){
@@ -506,17 +539,16 @@ function hostLeaderboard(){
 function hostReset(){
   if(!confirm('รีเซ็ตเกมทั้งหมด?'))return;
   loading(true);
-  gameRef.set({phase:'lobby',players:{},assignments:{},rounds:3,round:0,displayState:null}).then(()=>loading(false));
+  gameRef.set({phase:'lobby',players:{},assignments:{},cargoPool:[],rounds:5,round:0,currentEvent:null,displayState:null}).then(()=>loading(false));
 }
 
 // ══ JOIN ══
 function initJoin(){
   listenGame(g=>{
-    if(g.phase&&g.phase!=='lobby'&&myName){
-      gotoMode('player');return;
-    }
+    if(g.phase&&g.phase!=='lobby'&&myName){gotoMode('player');return;}
     const players=g.players?Object.values(g.players):[];
-    document.getElementById('join-waiting').innerHTML=players.map(p=>`<div class="w-chip">👤 ${p.name}</div>`).join('');
+    const w=document.getElementById('join-waiting');
+    if(w) w.innerHTML=players.map(p=>`<div class="w-chip">👤 ${p.name}</div>`).join('');
   });
 }
 
@@ -528,17 +560,14 @@ function joinGame(){
   const players=g.players||{};
   if(players[n]){alert('ชื่อซ้ำ ลองชื่ออื่นนะ');return;}
   loading(true);
-  db.ref(`game/players/${n}`).set({name:n,budget:1000000,profit:0}).then(()=>{
-    loading(false);
-    myName=n;
-    localStorage.setItem('cg_name',n);
-    gotoMode('player');
+  db.ref(`game/players/${n}`).set({name:n,budget:1000000,profit:0,usedCargos:[]}).then(()=>{
+    loading(false);myName=n;localStorage.setItem('cg_name',n);gotoMode('player');
   });
 }
 
 // ══ PLAYER ══
 function initPlayer(){
-  if(!myName){myName=localStorage.getItem('cg_name');}
+  if(!myName) myName=localStorage.getItem('cg_name');
   listenGame(g=>renderPlayer(g));
 }
 
@@ -552,16 +581,13 @@ function renderPlayer(g){
       <div style="font-family:'Chakra Petch',sans-serif;color:var(--muted);margin-top:14px;">รอ Host เริ่มเกม...</div>
     </div>`;return;
   }
-
   if(!g.phase||g.phase==='lobby'){
-    const cnt=g.players?Object.keys(g.players).length:0;
     el.innerHTML=`<div style="text-align:center;padding-top:50px;">
       <div style="font-size:3rem;animation:float 3s ease-in-out infinite;">⚓</div>
       <div style="font-family:'Chakra Petch',sans-serif;color:var(--gold);margin-top:14px;">สวัสดี ${myName}!</div>
-      <div style="color:var(--muted);font-size:.9rem;margin-top:8px;">รอ Host เริ่มเกม... (${cnt} คน)</div>
+      <div style="color:var(--muted);font-size:.9rem;margin-top:8px;">รอ Host เริ่มเกม...</div>
     </div>`;return;
   }
-
   if(g.phase==='end'){
     const sorted=Object.values(g.players).sort((a,b)=>b.profit-a.profit);
     const rank=sorted.findIndex(x=>x.name===myName)+1;
@@ -570,58 +596,97 @@ function renderPlayer(g){
       <div style="font-family:'Chakra Petch',sans-serif;font-size:1.4rem;margin-top:10px;">อันดับ ${rank}</div>
       <div style="color:var(--muted);font-size:.85rem;margin-top:4px;">กำไรสุทธิทั้งเกม</div>
       <div style="font-family:'Chakra Petch',sans-serif;font-size:2rem;font-weight:800;margin-top:6px;
-        color:${p.profit>=0?'var(--green)':'var(--red)'};">${fmtS(p.profit)}</div>
+        color:${(p.profit||0)>=0?'var(--green)':'var(--red)'};">${fmtS(p.profit||0)}</div>
     </div>`;return;
   }
 
   const a=g.assignments&&g.assignments[myName];
-  if(!a){
-    el.innerHTML=`<div style="text-align:center;padding-top:50px;color:var(--muted);">กำลังโหลด...</div>`;return;
-  }
+  const pool=g.cargoPool||[];
+  const usedCargos=p.usedCargos?Object.values(p.usedCargos):[];
 
-  if(g.phase==='event'&&a.eventResult){renderPlayerEvent(el,a,p);return;}
+  if(g.phase==='event'&&a&&a.eventResult){renderPlayerEvent(el,a,p);return;}
 
-  if(a.decided){
+  if(a&&a.decided){
+    const cargo=pool[a.cargoIdx];
     el.innerHTML=`<div style="text-align:center;padding-top:40px;width:100%;">
-      <div style="font-size:2.5rem;">⏳</div>
-      <div style="font-family:'Chakra Petch',sans-serif;color:var(--muted);font-size:.95rem;margin-top:12px;">
-        เลือก <span style="color:var(--gold);">${ICC[a.icc].name}</span> แล้ว<br>
-        <span style="font-size:.8rem;opacity:.6;">รอผู้เล่นคนอื่น...</span>
+      <div style="font-size:2.5rem;">${cargo?cargo.icon:'📦'}</div>
+      <div style="font-family:'Chakra Petch',sans-serif;color:var(--gold);font-size:1rem;margin-top:10px;">
+        ${cargo?cargo.name:''} — ${ICC[a.icc].name}
       </div>
+      <div style="color:var(--muted);font-size:.85rem;margin-top:8px;">รอผู้เล่นคนอื่น...</div>
     </div>`;return;
   }
 
-  // Choose ICC
-  const cv=a.cargo.value;
+  // PICKING PHASE — เลือกสินค้า + ICC
+  const budgetNow=(p.budget||0)+(p.profit||0);
   el.innerHTML=`
     <div class="budget-row">
-      <div><div class="br-l">งบคงเหลือ</div><div class="br-v">${fmt(p.budget+(p.profit||0))}</div></div>
+      <div><div class="br-l">งบคงเหลือ</div><div class="br-v">${fmt(budgetNow)}</div></div>
       <div><div class="br-l">รอบ</div><div class="br-v">${(g.round||0)+1}/${g.rounds}</div></div>
     </div>
-    <div class="mc-banner">
-      <div class="mc-icon">${a.cargo.icon}</div>
-      <div class="mc-name">${a.cargo.name}</div>
-      <div class="mc-sub">${a.cargo.route} | ${a.cargo.risk}</div>
-      <div class="mc-val">มูลค่าสินค้า ${fmt(cv)}</div>
-    </div>
     <div class="card" style="width:100%;">
-      <div class="card-label">เลือกความคุ้มครอง</div>
-      <div class="icc-select">${buildIccOpts(cv)}</div>
-      <button class="btn btn-gold btn-full" id="confirm-btn" onclick="playerConfirm('${myName}')" disabled>ยืนยัน ✓</button>
+      <div class="card-label">เลือกสินค้าที่จะส่งรอบนี้</div>
+      <div class="cargo-pick-grid" id="cargo-grid">
+        ${pool.map((c,i)=>{
+          const used=usedCargos.includes(i);
+          return `<div class="cargo-pick-card${used?' used':''}" id="cp-${i}" onclick="${used?'':'pickCargo('+i+')'}">
+            <div class="cpc-icon">${c.icon}</div>
+            <div class="cpc-name">${c.name}</div>
+            <div class="cpc-route">${c.route}</div>
+            <div class="cpc-val">${fmt(c.value)}</div>
+            ${used?'':`<div class="cpc-round" style="color:var(--muted);">${c.risk}</div>`}
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+    <div id="icc-section" style="display:none;width:100%;">
+      <div class="sel-cargo-banner" id="sel-banner"></div>
+      <div class="card" style="width:100%;">
+        <div class="card-label">เลือกความคุ้มครอง</div>
+        <div class="icc-select" id="icc-opts"></div>
+        <button class="btn btn-gold btn-full" id="confirm-btn" onclick="playerConfirm()" disabled>ยืนยัน ✓</button>
+      </div>
     </div>`;
+  window._selCargoIdx=null;
   window._selIcc=null;
 }
 
-function buildIccOpts(cv){
-  return Object.values(ICC).map(ic=>`
+function pickCargo(idx){
+  window._selCargoIdx=idx;
+  window._selIcc=null;
+  const pool=G.cargoPool||[];
+  const cargo=pool[idx];
+  if(!cargo)return;
+  // highlight
+  document.querySelectorAll('.cargo-pick-card:not(.used)').forEach(el=>el.classList.remove('selected'));
+  const card=document.getElementById('cp-'+idx);
+  if(card)card.classList.add('selected');
+  // show ICC section
+  const sec=document.getElementById('icc-section');
+  if(sec)sec.style.display='block';
+  // banner
+  const banner=document.getElementById('sel-banner');
+  if(banner) banner.innerHTML=`
+    <div class="scb-icon">${cargo.icon}</div>
+    <div class="scb-info">
+      <div class="scb-name">${cargo.name}</div>
+      <div class="scb-sub">${cargo.route} | ${cargo.risk}</div>
+      <div class="scb-val">มูลค่า ${fmt(cargo.value)}</div>
+      <div class="scb-change" onclick="window._selCargoIdx=null;document.getElementById('icc-section').style.display='none';document.querySelectorAll('.cargo-pick-card').forEach(e=>e.classList.remove('selected'));">เปลี่ยนสินค้า</div>
+    </div>`;
+  // ICC opts
+  const opts=document.getElementById('icc-opts');
+  if(opts) opts.innerHTML=Object.values(ICC).map(ic=>`
     <button class="icc-opt" id="io-${ic.id}" onclick="selIcc('${ic.id}')">
       <div class="io-icon">${ic.icon}</div>
       <div class="io-text">
         <div class="io-name">${ic.name}</div>
         <div class="io-desc">${ic.desc}</div>
       </div>
-      <div class="io-cost">${ic.rate>0?fmt(Math.round(cv*ic.rate)):'ฟรี'}</div>
+      <div class="io-cost">${ic.rate>0?fmt(Math.round(cargo.value*ic.rate)):'ฟรี'}</div>
     </button>`).join('');
+  const btn=document.getElementById('confirm-btn');
+  if(btn)btn.disabled=true;
 }
 
 function selIcc(id){
@@ -631,23 +696,32 @@ function selIcc(id){
     if(el)el.className='icc-opt'+(k===id?' sel-'+id:'');
   });
   const btn=document.getElementById('confirm-btn');
-  if(btn){btn.disabled=false;}
+  if(btn)btn.disabled=false;
 }
 
-function playerConfirm(name){
-  if(!window._selIcc)return;
+function playerConfirm(){
+  if(window._selCargoIdx===null||!window._selIcc)return;
+  const p=G.players&&G.players[myName];
+  if(!p)return;
+  const usedCargos=p.usedCargos?Object.values(p.usedCargos):[];
+  const newUsed=[...usedCargos, window._selCargoIdx];
   loading(true);
-  db.ref(`game/assignments/${name}`).update({icc:window._selIcc,decided:true}).then(()=>loading(false));
+  Promise.all([
+    db.ref(`game/assignments/${myName}`).set({playerName:myName,cargoIdx:window._selCargoIdx,icc:window._selIcc,decided:true,eventResult:null}),
+    db.ref(`game/players/${myName}/usedCargos`).set(newUsed),
+  ]).then(()=>loading(false));
 }
 
 function renderPlayerEvent(el,a,p){
   const r=a.eventResult;
   const ev=r.ev;
   const icc=ICC[a.icc];
+  const covers=coversArr(ev);
+  const canClaim=covers.includes(a.icc);
   let claimHtml='';
   if(a.icc==='none'){
     claimHtml=`<div class="no-claim-box">❌ ไม่มีประกัน รับความเสียหายทั้งหมดเอง</div>`;
-  }else if(r.canClaim){
+  }else if(canClaim){
     claimHtml=`<div class="claim-box">✅ <strong>${icc.name}</strong> คุ้มครองเหตุการณ์นี้ ได้รับเคลม <strong>${fmt(r.claimAmt)}</strong></div>`;
   }else{
     const why={
@@ -662,6 +736,9 @@ function renderPlayerEvent(el,a,p){
       <div class="rp-ev-icon">${ev.icon}</div>
       <div class="rp-ev-title">${ev.title}</div>
       <div class="rp-ev-desc">${ev.desc}</div>
+    </div>
+    <div style="text-align:center;margin-bottom:10px;font-size:.85rem;color:var(--muted);">
+      สินค้า: <strong style="color:var(--text);">${r.cargoIcon||''} ${r.cargoName||''}</strong>
     </div>
     ${claimHtml}
     <div class="rp-breakdown">
@@ -678,12 +755,9 @@ function renderPlayerEvent(el,a,p){
 }
 
 // ══ DISPLAY ══
-function initDisplay(){
-  listenGame(g=>renderDisplay(g));
-}
+function initDisplay(){listenGame(g=>renderDisplay(g));}
 
 function renderDisplay(g){
-  // Scoreboard
   const sb=document.getElementById('disp-sb');
   if(sb&&g.players){
     sb.innerHTML=Object.values(g.players).map(p=>`
@@ -692,12 +766,10 @@ function renderDisplay(g){
         <div class="sc-val">${(p.profit||0)>=0?'+':'-'}฿${(Math.abs(p.profit||0)/1000).toFixed(0)}K</div>
       </div>`).join('');
   }
-
   const main=document.getElementById('disp-main');
   if(!main)return;
   const s=g.displayState;
 
-  // LOBBY
   if(!s||!g.phase||g.phase==='lobby'){
     const players=g.players?Object.values(g.players):[];
     main.innerHTML=`<div class="idle-wrap">
@@ -708,40 +780,53 @@ function renderDisplay(g){
     </div>`;return;
   }
 
-  // CARGO PHASE
-  if(s.type==='cargo'){
+  if(s.type==='picking'){
+    const pool=g.cargoPool||[];
     const assigns=g.assignments?Object.values(g.assignments):[];
-    main.innerHTML=`<div style="text-align:center;width:100%;">
-      <div style="font-family:'Chakra Petch',sans-serif;font-size:clamp(.9rem,2.5vw,1.6rem);
-        color:var(--muted);margin-bottom:20px;letter-spacing:2px;">🗓️ รอบที่ ${(g.round||0)+1} / ${g.rounds} — กำลังเลือกประกัน</div>
-      <div class="cr-grid">
+    const playerCount=g.players?Object.keys(g.players).length:0;
+    const done=assigns.filter(a=>a.decided).length;
+    main.innerHTML=`<div style="text-align:center;width:100%;max-width:900px;">
+      <div class="round-banner">🗓️ รอบที่ ${(g.round||0)+1} / ${g.rounds} — ผู้เล่นกำลังเลือกสินค้า (${done}/${playerCount})</div>
+      <div style="margin-bottom:16px;font-size:clamp(.8rem,1.5vw,1rem);color:var(--muted);">สินค้าทั้งหมดในเกมนี้</div>
+      <div class="disp-cargo-pool">
+        ${pool.map((c,i)=>`
+          <div class="dcp-item">
+            <div class="dcp-icon">${c.icon}</div>
+            <div class="dcp-name">${c.name}</div>
+            <div class="dcp-round">${fmt(c.value)}</div>
+          </div>`).join('')}
+      </div>
+      <div class="ev-grid" style="margin-top:10px;">
         ${assigns.map(a=>`
-          <div class="cr-card ${a.decided?'decided':''}">
-            <div class="cr-icon">${a.cargo.icon}</div>
-            <div class="cr-pname">👤 ${a.playerName}</div>
-            <div class="cr-cname">${a.cargo.name}</div>
-            <div class="cr-val">${fmt(a.cargo.value)}</div>
-            <div class="cr-icc">${a.decided?'✅ '+ICC[a.icc].name:'⏳ กำลังเลือก...'}</div>
+          <div class="ev-card">
+            <div class="ev-big-icon">${pool[a.cargoIdx]?pool[a.cargoIdx].icon:'❓'}</div>
+            <div class="ev-sub">${a.playerName}</div>
+            <div class="ev-cargo">${pool[a.cargoIdx]?pool[a.cargoIdx].name:'กำลังเลือก...'}</div>
+            <div class="ev-title" style="color:${a.decided?'var(--green)':'var(--muted)'};">${a.decided?(ICC[a.icc]?ICC[a.icc].name:'?'):'⏳ รออยู่...'}</div>
           </div>`).join('')}
       </div>
     </div>`;return;
   }
 
-  // EVENT PHASE
   if(s.type==='event'){
+    const pool=g.cargoPool||[];
     const assigns=g.assignments?Object.values(g.assignments):[];
-    main.innerHTML=`<div style="width:100%;max-width:1000px;">
-      <div style="font-family:'Chakra Petch',sans-serif;font-size:clamp(.9rem,2.5vw,1.8rem);
-        color:var(--muted);text-align:center;margin-bottom:18px;">💥 เหตุการณ์รอบที่ ${(g.round||0)+1}</div>
+    const ev=g.currentEvent;
+    main.innerHTML=`<div style="width:100%;max-width:1050px;display:flex;flex-direction:column;align-items:center;">
+      <div class="round-banner">💥 เหตุการณ์รอบที่ ${(g.round||0)+1}</div>
+      ${ev?`<div class="ev-announce ${ev.type}" style="margin-bottom:20px;">
+        <div class="ev-ann-icon">${ev.icon}</div>
+        <div class="ev-ann-title">${ev.title}</div>
+        <div class="ev-ann-desc">${ev.desc}</div>
+      </div>`:''}
       <div class="ev-grid">
         ${assigns.map(a=>{
           const r=a.eventResult;if(!r)return '';
-          const ev=r.ev;
           return `<div class="ev-card">
-            <div class="ev-big-icon">${ev.icon}</div>
-            <div class="ev-title">${ev.title}</div>
-            <div class="ev-player">${a.playerName}</div>
-            <div class="ev-icc">${ICC[a.icc].name} ${r.canClaim?'✅':'❌'}</div>
+            <div class="ev-big-icon">${r.cargoIcon||'📦'}</div>
+            <div class="ev-title">${r.cargoName||''}</div>
+            <div class="ev-sub">${a.playerName}</div>
+            <div class="ev-icc" style="font-size:.65rem;color:var(--muted);">${ICC[a.icc]?ICC[a.icc].name:''} ${r.canClaim?'✅':'❌'}</div>
             <div class="ev-change ${r.netChange>=0?'pos':'neg'}">${fmtS(r.netChange)}</div>
           </div>`;
         }).join('')}
@@ -749,7 +834,6 @@ function renderDisplay(g){
     </div>`;return;
   }
 
-  // LEADERBOARD
   if(s.type==='leaderboard'){
     const sorted=g.players?Object.values(g.players).sort((a,b)=>b.profit-a.profit):[];
     main.innerHTML=`<div class="lb-wrap">
@@ -766,10 +850,7 @@ function renderDisplay(g){
   }
 }
 
-// ══ INIT ══
-window.onload=()=>{
-  myName=localStorage.getItem('cg_name')||null;
-};
+window.onload=()=>{myName=localStorage.getItem('cg_name')||null;};
 </script>
 
 </body>
